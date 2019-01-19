@@ -12,4 +12,10 @@ public class Interactable : MonoBehaviour	{
     {
         
     }
+
+    public virtual void Interact()   {
+        Debug.Log("Interactable is interacting, and removing itself");
+        Destroy(gameObject);
+    }
+
 }
