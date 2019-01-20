@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour	{
     void OnTriggerEnter(Collider other) {
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null)   {
-            hud.OpenMessagePanel("text here");
             SetFocus(interactable);
         }
     }
@@ -33,15 +32,19 @@ public class PlayerController : MonoBehaviour	{
     void OnTriggerExit(Collider other) {
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null)   {
-            hud.CloseMessagePanel();
+            RemoveFocus();
         }        
     }
 
     void Interact() {
         // FindObjectOfType<AudioManager>().Play("Violin");
+        bool didInteract = false;
         Debug.Log("interact");
         if (focus != null)  {
-            focus.Interact();
+            didInteract = focus.Interact();
+        }
+        if (didInteract)    {
+            RemoveFocus();
         }
     }
 
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour	{
                 RemoveFocus();
             
             focus = newFocus;
+            hud.OpenMessagePanel("text here");
             // follow focus
             // call functions on Interactable if needed
         }
@@ -59,6 +63,7 @@ public class PlayerController : MonoBehaviour	{
     void RemoveFocus()  {
         // call functions on Interactable if needed
         focus = null;
+        hud.CloseMessagePanel();
         // stop following focus
     }
 
