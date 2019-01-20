@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour	{
     
+    #region Singelton
     public static GameManager instance; 
 
     void Awake() {
@@ -14,24 +15,7 @@ public class GameManager : MonoBehaviour	{
             return;
         }
     }
-
-    // public GameObject hudGO;
-
-    // HUD hud;
-
-    void Start() {
-        // hud = hudGO.GetComponent<HUD>();
-    }
-
-    void Update()
-    {
-        
-    }
-
-
-    // public HUD GetHUD() {
-        // return hud;
-    // }
+    #endregion Singelton
 
 
 }

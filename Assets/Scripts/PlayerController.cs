@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour	{
         if (Input.GetKeyDown(KeyCode.E)) {
             Interact();
         }
+        if (Input.GetKeyDown(KeyCode.T))  {
+            Test();
+        }
     }
 
     void OnTriggerEnter(Collider other) {
@@ -37,7 +40,6 @@ public class PlayerController : MonoBehaviour	{
     }
 
     void Interact() {
-        // FindObjectOfType<AudioManager>().Play("Violin");
         bool didInteract = false;
         Debug.Log("interact");
         if (focus != null)  {
@@ -65,6 +67,10 @@ public class PlayerController : MonoBehaviour	{
         focus = null;
         hud.CloseMessagePanel();
         // stop following focus
+    }
+
+    void Test() {
+        // FindObjectOfType<CameraManager>().ChangeCamera("01_Backward_Into_Start_Corner");
     }
 
 }
