@@ -9,19 +9,20 @@ public class PlayerController : MonoBehaviour	{
     Interactable focus;
 
 
-
-    void Start() {
-        
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) {
-            Interact();
+        InputActions();
+
+        if(focus != null && focus.isActive)   {
+            FollowFocusObject();
+            
+            if (focus.isInteractable(gameObject.transform)) {
+                hud.OpenMessagePanel("");
+            }   else    {
+                hud.CloseMessagePanel();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.T))  {
-            Test();
-        }
+
     }
 
     void OnTriggerEnter(Collider other) {
@@ -31,7 +32,6 @@ public class PlayerController : MonoBehaviour	{
         }
     }
 
-
     void OnTriggerExit(Collider other) {
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null)   {
@@ -39,14 +39,13 @@ public class PlayerController : MonoBehaviour	{
         }        
     }
 
-    void Interact() {
-        bool didInteract = false;
-        Debug.Log("interact");
-        if (focus != null)  {
-            didInteract = focus.Interact();
-        }
-        if (didInteract)    {
-            RemoveFocus();
+    void InteractWithFocus() {
+        if (focus != null && focus.isActive)  {
+            if(focus.isInteractable(gameObject.transform))    {
+                focus.Interact();
+                RemoveFocus();
+            }
+            
         }
     }
 
@@ -54,11 +53,10 @@ public class PlayerController : MonoBehaviour	{
         if (newFocus != focus)  {
             if (focus != null) 
                 RemoveFocus();
-            
-            focus = newFocus;
-            hud.OpenMessagePanel("text here");
-            // follow focus
-            // call functions on Interactable if needed
+
+            if(newFocus != null && newFocus.isActive)
+                focus = newFocus;
+                // call functions on Interactable if needed
         }
     }
 
@@ -66,11 +64,21 @@ public class PlayerController : MonoBehaviour	{
         // call functions on Interactable if needed
         focus = null;
         hud.CloseMessagePanel();
-        // stop following focus
+    }
+    void FollowFocusObject()  {
+        // TODO: character to look at the focus object
     }
 
     void Test() {
-        // FindObjectOfType<CameraManager>().ChangeCamera("01_Backward_Into_Start_Corner");
+    }
+
+    void InputActions()  {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            InteractWithFocus();
+        }
+        if (Input.GetKeyDown(KeyCode.T))  {
+            Test();
+        }
     }
 
 }
