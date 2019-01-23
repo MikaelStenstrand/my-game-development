@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour	{
-    
+
     public HUD hud;
 
     Interactable focus;
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour	{
 
         if(focus != null && focus.isActive)   {
             FollowFocusObject();
-            
+
             if (focus.isInteractable(gameObject.transform)) {
                 hud.OpenMessagePanel("");
             }   else    {
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour	{
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null)   {
             RemoveFocus();
-        }        
+        }
     }
 
     void InteractWithFocus() {
@@ -45,18 +45,19 @@ public class PlayerController : MonoBehaviour	{
                 focus.Interact();
                 RemoveFocus();
             }
-            
+
         }
     }
 
     void SetFocus(Interactable newFocus)    {
         if (newFocus != focus)  {
-            if (focus != null) 
+            if (focus != null)
                 RemoveFocus();
 
-            if(newFocus != null && newFocus.isActive)
+            if(newFocus != null && newFocus.isActive)   {
                 focus = newFocus;
                 // call functions on Interactable if needed
+            }
         }
     }
 

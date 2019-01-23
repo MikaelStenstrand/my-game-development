@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour	{
-    
+
     public float interactionRadius = 3f;
     public Transform interactionPoint;
     public bool isActive = true;
@@ -14,7 +14,6 @@ public class Interactable : MonoBehaviour	{
             Destroy(gameObject);
             return;
         }
-
     }
 
     void Start() {
@@ -25,9 +24,9 @@ public class Interactable : MonoBehaviour	{
 
     public bool isInteractable(Transform playerTransform)    {
         float distanceToPlayer = Vector3.Distance(playerTransform.position, interactionPoint.position);
-        if (distanceToPlayer <= interactionRadius) 
+        if (distanceToPlayer <= interactionRadius)
             return true;
-        
+
         return false;
     }
 

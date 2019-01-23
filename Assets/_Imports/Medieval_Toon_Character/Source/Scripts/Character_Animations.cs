@@ -7,11 +7,16 @@ public class Character_Animations : MonoBehaviour {
 	private float verticalInput, horizontalInput, run, rotateSpeed;
     private bool isRotating = false;
 
+	public bool isMovementEnabled = true;
+
 	void Start () {
 		animator = GetComponent <Animator> ();
 	}
-	
+
 	void Update () {
+		if (!isMovementEnabled)
+			return;
+
 		verticalInput = Input.GetAxis("Vertical");
 		horizontalInput = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown("space")) {
@@ -28,7 +33,7 @@ public class Character_Animations : MonoBehaviour {
 		animator.SetFloat("Turn",horizontalInput);
 		animator.SetBool("IsRotating", isRotating);
 	}
-    
+
     void Turning(float horizontalInput) {
         if (horizontalInput != 0) {
             isRotating = true;
@@ -51,4 +56,5 @@ public class Character_Animations : MonoBehaviour {
 		else
 			run=0.0f;
 	}
+
 }
