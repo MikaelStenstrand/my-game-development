@@ -6,14 +6,20 @@ public class Interactable : MonoBehaviour	{
 
     public float interactionRadius = 3f;
     public Transform interactionPoint;
+
+    public bool supportMultipleInteractions = false;
+
+    [HideInInspector]
     public bool isActive = true;
 
     public virtual void Interact()   {
         if (isActive) {
             Debug.Log("Interactable is interacting, and removing itself");
             Destroy(gameObject);
+            setInactive();
             return;
         }
+
     }
 
     void Start() {
@@ -28,6 +34,11 @@ public class Interactable : MonoBehaviour	{
             return true;
 
         return false;
+    }
+
+    public void setInactive()  {
+        if (!supportMultipleInteractions)
+            isActive = false;
     }
 
     void OnDrawGizmosSelected() {
