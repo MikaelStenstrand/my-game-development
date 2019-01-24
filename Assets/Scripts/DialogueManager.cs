@@ -3,31 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using VIDE_Data;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class DialogueManager : MonoBehaviour  {
 
     public Character_Animations playerAnimation;
-
     public GameObject containerNPC;
     public GameObject containerPlayer;
-
     public Text textNPC;
     public Text[] textChoises;
 
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+    private VIDE_Assign dialog;
+
+    #region Singelton
+    public static DialogueManager instance;
+
+    void Awake() {
+        if (instance == null)   {
+            instance = this;
+        } else  {
+            Debug.LogWarning("More than one instance of GameManager exists!");
+            return;
+        }
+    }
+    #endregion Singelton
+
     void Start() {
         containerNPC.SetActive(false);
         containerPlayer.SetActive(false);
     }
 
-
-    public void SetPlayerChoice(int choice) {
-        VD.nodeData.commentIndex = choice;
-        if(Input.GetMouseButtonUp(0))
-            VD.Next();
-    }
-
-    // Update is called once per frame
     void Update() {
         if(Input.GetKeyDown(KeyCode.Return))   {
             if(!VD.isActive)    {
@@ -38,12 +44,28 @@ public class DialogueManager : MonoBehaviour  {
         }
     }
 
+
+    public void StartDialog(VIDE_Assign dialog, AudioSource audioSource) {
+        this.dialog = dialog;
+        this.audioSource = audioSource;
+        BeginDialouge();
+    }
+    public void setAudioSource(AudioSource audioSource) {
+        this.audioSource = audioSource;
+    }
+    public void SetPlayerChoice(int choice) {
+        VD.nodeData.commentIndex = choice;
+        if(Input.GetMouseButtonUp(0))
+            VD.Next();
+    }
+
     void BeginDialouge()    {
-        playerAnimation.isMovementEnabled = false;
+        playerAnimation.isMovementEnabled = false;  // TODO: stop character first
 
         VD.OnNodeChange += UpdateUI;
         VD.OnEnd += EndDialogue;
-        VD.BeginDialogue(GetComponent<VIDE_Assign>());
+        VD.BeginDialogue(dialog);
+        //VD.BeginDialogue(GetComponent<VIDE_Assign>());
     }
 
     void UpdateUI(VD.NodeData data) {
@@ -64,6 +86,12 @@ public class DialogueManager : MonoBehaviour  {
         } else  {
             containerNPC.SetActive(true);
             textNPC.text = data.comments[data.commentIndex];
+            if (data.audios[data.commentIndex] != null) {
+                if (audioSource != null)    {
+                    audioSource.clip = data.audios[data.commentIndex];
+                    audioSource.Play();
+                }
+            }
         }
     }
 

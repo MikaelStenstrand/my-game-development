@@ -1,0 +1,78 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: TestDialogue
+---------------------------------
+#NODEID#
+0
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Hello There!
+#COMMENT#
+I'm the blue dragon
+#COMMENT#
+Wlecome to the land of dragons
+#COMMENT#
+What can i do for you?
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+I'm looking for adventure
+#COMMENT#
+Dragons? Really?
+#COMMENT#
+Back off, You filthy beast!
+---------------------------------
+#NODEID#
+2
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Adventure, huh?
+#COMMENT#
+You'll find tons of that here
+#COMMENT#
+We need warriors like you to take on the challenge
+---------------------------------
+#NODEID#
+3
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Have you not ever seen a dragon before?
+#COMMENT#
+Yes! Plenty of them!
+---------------------------------
+#NODEID#
+4
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+No need for that, human.
+#COMMENT#
+We are no threat to you.
+---------------------------------
+#END#
