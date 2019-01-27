@@ -13,13 +13,7 @@ public class Interactable : MonoBehaviour	{
     public bool isActive = true;
 
     public virtual void Interact()   {
-        if (isActive) {
-            Debug.Log("Interactable is interacting, and removing itself");
-            Destroy(gameObject);
-            setInactive();
-            return;
-        }
-
+        SetInactive();
     }
 
     void Start() {
@@ -28,7 +22,7 @@ public class Interactable : MonoBehaviour	{
     }
 
 
-    public bool isInteractable(Transform playerTransform)    {
+    public bool IsInteractable(Transform playerTransform)    {
         float distanceToPlayer = Vector3.Distance(playerTransform.position, interactionPoint.position);
         if (distanceToPlayer <= interactionRadius)
             return true;
@@ -36,7 +30,7 @@ public class Interactable : MonoBehaviour	{
         return false;
     }
 
-    public void setInactive()  {
+    public void SetInactive()  {
         if (!supportMultipleInteractions)
             isActive = false;
     }

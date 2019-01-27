@@ -17,5 +17,19 @@ public class GameManager : MonoBehaviour	{
     }
     #endregion Singelton
 
+    public GameObject playerGO;
 
+    [HideInInspector]
+    public Character_Animations playerAnimation;
+    [HideInInspector]
+    public PlayerController playerController;
+
+    void Start() {
+        if (playerGO == null) {
+            Debug.Log("No player object");
+            return;
+        }
+        playerAnimation = playerGO.GetComponent<Character_Animations>();
+        playerController = playerGO.GetComponent<PlayerController>();
+    }
 }

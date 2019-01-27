@@ -15,17 +15,11 @@ public class DialogInteractable : Interactable	{
         }
         
         DialogueManager.instance.StartDialog(dialog, audioSource);
-
-        base.setInactive();
+        base.Interact();
     }
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
         dialog = GetComponent<VIDE_Assign>();
-    }
-
-    void Update()
-    {
-        
     }
 }

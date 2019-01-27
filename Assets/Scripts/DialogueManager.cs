@@ -44,7 +44,6 @@ public class DialogueManager : MonoBehaviour  {
         }
     }
 
-
     public void StartDialog(VIDE_Assign dialog, AudioSource audioSource) {
         this.dialog = dialog;
         this.audioSource = audioSource;
@@ -60,12 +59,11 @@ public class DialogueManager : MonoBehaviour  {
     }
 
     void BeginDialouge()    {
-        playerAnimation.isMovementEnabled = false;  // TODO: stop character first
+        playerAnimation.DisableMovement();
 
         VD.OnNodeChange += UpdateUI;
         VD.OnEnd += EndDialogue;
         VD.BeginDialogue(dialog);
-        //VD.BeginDialogue(GetComponent<VIDE_Assign>());
     }
 
     void UpdateUI(VD.NodeData data) {
@@ -96,7 +94,7 @@ public class DialogueManager : MonoBehaviour  {
     }
 
     void EndDialogue(VD.NodeData data)  {
-        playerAnimation.isMovementEnabled = true;
+        playerAnimation.EnableMovement();
         containerNPC.SetActive(false);
         containerPlayer.SetActive(false);
 

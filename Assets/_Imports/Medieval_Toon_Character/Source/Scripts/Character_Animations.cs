@@ -7,14 +7,14 @@ public class Character_Animations : MonoBehaviour {
 	private float verticalInput, horizontalInput, run, rotateSpeed;
     private bool isRotating = false;
 
-	public bool isMovementEnabled = true;
+	private bool movementEnabled = true;
 
 	void Start () {
 		animator = GetComponent <Animator> ();
 	}
 
 	void Update () {
-		if (!isMovementEnabled)
+		if (!IsMovementEnabled())
 			return;
 
 		verticalInput = Input.GetAxis("Vertical");
@@ -33,6 +33,23 @@ public class Character_Animations : MonoBehaviour {
 		animator.SetFloat("Turn",horizontalInput);
 		animator.SetBool("IsRotating", isRotating);
 	}
+
+    public void DisableMovement() {
+        movementEnabled = false;
+        verticalInput = 0;
+        horizontalInput = 0;
+        run = 0;
+        rotateSpeed = 0;
+        isRotating = false;
+    }
+
+    public void EnableMovement() {
+        movementEnabled = true;
+    }
+
+    public bool IsMovementEnabled() {
+        return movementEnabled;
+    }
 
     void Turning(float horizontalInput) {
         if (horizontalInput != 0) {

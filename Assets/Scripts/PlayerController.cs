@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour	{
         if(focus != null && focus.isActive)   {
             FollowFocusObject();
 
-            if (focus.isInteractable(gameObject.transform)) {
+            if (focus.IsInteractable(gameObject.transform)) {
                 hud.OpenMessagePanel("");
             }   else    {
                 hud.CloseMessagePanel();
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour	{
 
     void InteractWithFocus() {
         if (focus != null && focus.isActive)  {
-            if(focus.isInteractable(gameObject.transform))    {
+            if(focus.IsInteractable(gameObject.transform))    {
                 focus.Interact();
                 RemoveFocus();
             }
