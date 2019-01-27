@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2271009899856690268}
   - component: {fileID: 2271009899856690269}
   - component: {fileID: 2271009899856690210}
-  - component: {fileID: 2271009899856690208}
   - component: {fileID: 2271009899856690211}
+  - component: {fileID: 5750377456251651118}
   m_Layer: 0
-  m_Name: InteractableItem
+  m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,21 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2271009899856690208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2271009899856690209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b136811ca34fc4da7ca5bff0d9d0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRadius: 1.5
-  interactionPoint: {fileID: 2271009900750617040}
-  isActive: 1
 --- !u!135 &2271009899856690211
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -109,6 +94,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5750377456251651118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271009899856690209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5558049cdab74d48bb88d3b53d1f2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRadius: 3
+  interactionPoint: {fileID: 2271009900750617040}
+  supportMultipleInteractions: 0
+  isActive: 1
+  item: {fileID: 0}
 --- !u!1 &2271009900750617041
 GameObject:
   m_ObjectHideFlags: 0

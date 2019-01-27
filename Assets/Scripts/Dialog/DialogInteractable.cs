@@ -9,13 +9,13 @@ public class DialogInteractable : Interactable	{
     private VIDE_Assign dialog;
 
     public override void Interact() {
+        base.Interact();
         if (dialog == null || audioSource == null)  {
             Debug.LogWarning("Cannot start dialog");
             return;
         }
         
         DialogManager.instance.StartDialog(dialog, audioSource);
-        base.Interact();
     }
 
     void Start() {
