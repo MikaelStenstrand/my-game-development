@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour	{
     public GameObject playerGO;
 
     [HideInInspector]
-    public Character_Animations playerAnimation;
+    public PlayerAnimation playerAnimation;
     [HideInInspector]
     public PlayerController playerController;
 
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour	{
             Debug.Log("No player object");
             return;
         }
-        playerAnimation = playerGO.GetComponent<Character_Animations>();
+        playerAnimation = playerGO.GetComponent<PlayerAnimation>();
         playerController = playerGO.GetComponent<PlayerController>();
     }
 }

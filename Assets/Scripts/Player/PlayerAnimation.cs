@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character_Animations : MonoBehaviour {
+public class PlayerAnimation : MonoBehaviour {
 	private Animator animator;
 	private float verticalInput, horizontalInput, run, rotateSpeed;
     private bool isRotating = false;

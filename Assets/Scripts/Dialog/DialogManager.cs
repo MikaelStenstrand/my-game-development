@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 
 public class DialogManager : MonoBehaviour  {
 
-    public Character_Animations playerAnimation;
+    public PlayerAnimation playerAnimation;
     public GameObject containerNPC;
     public GameObject containerPlayer;
     public Text textNPC;
