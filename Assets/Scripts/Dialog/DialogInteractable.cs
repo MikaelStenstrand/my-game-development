@@ -14,7 +14,7 @@ public class DialogInteractable : Interactable	{
             return;
         }
         
-        DialogueManager.instance.StartDialog(dialog, audioSource);
+        DialogManager.instance.StartDialog(dialog, audioSource);
         base.Interact();
     }
 

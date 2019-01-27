@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour	{
 
     public HUD hud;
-    public DialogueManager dialogueManager;
+    public DialogManager dialogueManager;
     Interactable focus;
 
 

@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour	{
     public bool isActive = true;
 
     public virtual void Interact()   {
+        Debug.Log("Interacting...");
+
         SetInactive();
     }
 

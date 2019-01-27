@@ -1978,7 +1978,7 @@ GameObject:
   - component: {fileID: 486351857}
   - component: {fileID: 486351858}
   m_Layer: 0
-  m_Name: DialougeManager
+  m_Name: DialogManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3064,6 +3064,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a394ac6a358890d4abdea70bd5704a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGO: {fileID: 2014865454}
+  playerAnimation: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1001 &853716445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4594,6 +4597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271009899856690208, guid: c97af46b0f80aec4aba0eb30e156bae3,
+        type: 3}
+      propertyPath: supportMultipleInteractions
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c97af46b0f80aec4aba0eb30e156bae3, type: 3}
@@ -15533,6 +15541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 219092813}
+  dialogueManager: {fileID: 486351857}
 --- !u!4 &2014865463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: 2c972239f8d58d944a0e1cff0da4ac22,
@@ -16078,6 +16087,11 @@ PrefabInstance:
     - target: {fileID: 5464200891506970220, guid: bb7552828f60d364493f664870b6736f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464200891506970134, guid: bb7552828f60d364493f664870b6736f,
+        type: 3}
+      propertyPath: supportMultipleInteractions
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
