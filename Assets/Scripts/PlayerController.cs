@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour	{
 
     public HUD hud;
-
+    public DialogueManager dialogueManager;
     Interactable focus;
 
 
@@ -74,9 +74,14 @@ public class PlayerController : MonoBehaviour	{
     }
 
     void InputActions()  {
-        if (Input.GetKeyDown(KeyCode.E)) {
-            InteractWithFocus();
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)) {
+            if (dialogueManager.IsActiveDialog()) {
+                dialogueManager.NextInDialog();
+            } else {
+                InteractWithFocus();
+            }
         }
+
         if (Input.GetKeyDown(KeyCode.T))  {
             Test();
         }

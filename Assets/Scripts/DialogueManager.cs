@@ -35,19 +35,25 @@ public class DialogueManager : MonoBehaviour  {
     }
 
     void Update() {
-        if(Input.GetKeyDown(KeyCode.Return))   {
-            if(!VD.isActive)    {
-                BeginDialouge();
-            } else  {
-                VD.Next();
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.Return))   {
+        //    if(!VD.isActive)    {
+        //        BeginDialouge();
+        //    } else  {
+        //        VD.Next();
+        //    }
+        //}
     }
 
     public void StartDialog(VIDE_Assign dialog, AudioSource audioSource) {
         this.dialog = dialog;
         this.audioSource = audioSource;
         BeginDialouge();
+    }
+    public bool IsActiveDialog() {
+        return VD.isActive;
+    }
+    public void NextInDialog() {
+        VD.Next();
     }
     public void setAudioSource(AudioSource audioSource) {
         this.audioSource = audioSource;
