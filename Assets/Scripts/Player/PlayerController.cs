@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour	{
@@ -9,8 +8,10 @@ public class PlayerController : MonoBehaviour	{
     Interactable focus;
 
 
-    void Update()
-    {
+    void Update() {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         InputActions();
 
         if(focus != null && focus.isActive)   {
