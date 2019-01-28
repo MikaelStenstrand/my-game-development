@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour	{
     public List<Item> items = new List<Item>();
 
     public delegate void OnInventoryChanged();
-    public OnInventoryChanged OnInventoryChangedCallback { get; }
+    public OnInventoryChanged onInventoryChangedCallback;
 
     public bool AddToInventory(Item item) {
         if (inventorySpace <= items.Count) {
@@ -31,8 +31,8 @@ public class Inventory : MonoBehaviour	{
         }
         items.Add(item);
 
-        if (OnInventoryChangedCallback != null)
-            OnInventoryChangedCallback.Invoke();
+        if (onInventoryChangedCallback != null)
+            onInventoryChangedCallback.Invoke();
 
         return true;
     }
@@ -40,8 +40,8 @@ public class Inventory : MonoBehaviour	{
     
     public void RemoveFromInventory(Item item) {
         items.Remove(item);
-        if (OnInventoryChangedCallback != null)
-            OnInventoryChangedCallback.Invoke();
+        if (onInventoryChangedCallback != null)
+            onInventoryChangedCallback.Invoke();
     }
 
 }
