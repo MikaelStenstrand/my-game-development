@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 91744421}
   - component: {fileID: 91744424}
   - component: {fileID: 91744422}
+  - component: {fileID: 91744423}
   m_Layer: 0
   m_Name: 02_Walkway_Follow
   m_TagString: Untagged
@@ -663,6 +664,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followPlayer: 1
   playerTransform: {fileID: 2014865463}
+--- !u!114 &91744423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91744420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4ce7c9cdf2e16374ea56979eedf4c71a, type: 2}
 --- !u!20 &91744424
 Camera:
   m_ObjectHideFlags: 0
@@ -890,6 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 158054053}
   - component: {fileID: 158054055}
+  - component: {fileID: 158054054}
   m_Layer: 0
   m_Name: 02_Walkway_Mid
   m_TagString: Untagged
@@ -911,6 +926,19 @@ Transform:
   m_Father: {fileID: 445326644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 42.371002, y: -209.03699, z: 4.7400002}
+--- !u!114 &158054054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158054052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4ce7c9cdf2e16374ea56979eedf4c71a, type: 2}
 --- !u!20 &158054055
 Camera:
   m_ObjectHideFlags: 0
@@ -3468,6 +3496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810631571}
   - component: {fileID: 810631570}
+  - component: {fileID: 810631569}
   m_Layer: 0
   m_Name: 01_MainCamera
   m_TagString: Untagged
@@ -3475,6 +3504,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &810631569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810631568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4ce7c9cdf2e16374ea56979eedf4c71a, type: 2}
 --- !u!20 &810631570
 Camera:
   m_ObjectHideFlags: 0
@@ -3506,12 +3548,12 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -4611,6 +4653,7 @@ GameObject:
   - component: {fileID: 1160928447}
   - component: {fileID: 1160928449}
   - component: {fileID: 1160928448}
+  - component: {fileID: 1160928450}
   m_Layer: 0
   m_Name: 03_Follow
   m_TagString: Untagged
@@ -4688,6 +4731,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1160928450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160928446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4ce7c9cdf2e16374ea56979eedf4c71a, type: 2}
 --- !u!1 &1172232025
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,6 +5352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376653338}
   - component: {fileID: 1376653337}
+  - component: {fileID: 1376653336}
   m_Layer: 0
   m_Name: 01_Backward_Into_Start_Corner
   m_TagString: Untagged
@@ -5303,6 +5360,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1376653336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376653335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4ce7c9cdf2e16374ea56979eedf4c71a, type: 2}
 --- !u!20 &1376653337
 Camera:
   m_ObjectHideFlags: 0
@@ -5513,6 +5583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1479547974}
   - component: {fileID: 1479547975}
+  - component: {fileID: 1479547976}
   m_Layer: 0
   m_Name: 02_Walkway_Fan
   m_TagString: Untagged
@@ -5576,6 +5647,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1479547976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479547973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4ce7c9cdf2e16374ea56979eedf4c71a, type: 2}
 --- !u!1001 &1483009089
 PrefabInstance:
   m_ObjectHideFlags: 0
