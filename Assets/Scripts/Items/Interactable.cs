@@ -7,15 +7,13 @@ public class Interactable : MonoBehaviour	{
     public float interactionRadius = 3f;
     public Transform interactionPoint;
 
-    public bool supportMultipleInteractions = false;
+    public int timesOfInteraction = 1;
 
     [HideInInspector]
     public bool isActive = true;
 
-    public virtual void Interact()   {
-        Debug.Log("Interacting...");
-
-        SetInactive();
+    public virtual bool Interact()   {
+        return false;
     }
 
     void Start() {
@@ -32,8 +30,13 @@ public class Interactable : MonoBehaviour	{
         return false;
     }
 
-    public void SetInactive()  {
-        if (!supportMultipleInteractions)
+    public float getDistanceToPlayer(Transform playerTransform) {
+        return Vector3.Distance(playerTransform.position, interactionPoint.position);
+    }
+
+    public void WasInteracted() {
+        timesOfInteraction--;
+        if (timesOfInteraction <= 0)
             isActive = false;
     }
 

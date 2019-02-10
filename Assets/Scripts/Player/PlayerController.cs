@@ -1,23 +1,23 @@
-﻿using UnityEngine.EventSystems;
+﻿using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour	{
 
     public HUD hud;
     public DialogManager dialogueManager;
-    Interactable focus;
-
+    Interactable currentInteractableFocus;
 
     void Update() {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        InputActions();
+        CheckInputActions();
 
-        if(focus != null && focus.isActive)   {
+        if(currentInteractableFocus != null && currentInteractableFocus.isActive)   {
             FollowFocusObject();
 
-            if (focus.IsInteractable(gameObject.transform)) {
+            if (currentInteractableFocus.IsInteractable(gameObject.transform)) {
                 hud.OpenMessagePanel("");
             }   else    {
                 hud.CloseMessagePanel();
@@ -28,43 +28,48 @@ public class PlayerController : MonoBehaviour	{
 
     void OnTriggerEnter(Collider other) {
         Interactable interactable = other.GetComponent<Interactable>();
-        if (interactable != null)   {
-            SetFocus(interactable);
-        }
+        SetFocus(interactable);
     }
 
     void OnTriggerExit(Collider other) {
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null)   {
-            RemoveFocus();
+            RemoveFocus(interactable);
         }
     }
 
     void InteractWithFocus() {
-        if (focus != null && focus.isActive)  {
-            if(focus.IsInteractable(gameObject.transform))    {
-                focus.Interact();
-                RemoveFocus();
+        if (currentInteractableFocus != null && currentInteractableFocus.isActive)  {
+            if(currentInteractableFocus.IsInteractable(gameObject.transform))    {
+                bool wasInteracted = currentInteractableFocus.Interact();
+                if (wasInteracted) {
+                    RemoveFocus(currentInteractableFocus);
+                }
             }
-
         }
     }
 
     void SetFocus(Interactable newFocus)    {
-        if (newFocus != focus)  {
-            if (focus != null)
-                RemoveFocus();
+        if (newFocus == null)
+            return;
 
-            if(newFocus != null && newFocus.isActive)   {
-                focus = newFocus;
+        if (newFocus != currentInteractableFocus)  {
+            if(newFocus.isActive)   {
+                if (currentInteractableFocus != null)
+                    RemoveFocus(currentInteractableFocus);
+
+                currentInteractableFocus = newFocus;
                 // call functions on Interactable if needed
             }
         }
     }
 
-    void RemoveFocus()  {
+    void RemoveFocus(Interactable interactableToBeRemoved)  {
         // call functions on Interactable if needed
-        focus = null;
+        if (currentInteractableFocus == null || interactableToBeRemoved != currentInteractableFocus) {
+            return;
+        }
+        currentInteractableFocus = null;
         hud.CloseMessagePanel();
     }
     void FollowFocusObject()  {
@@ -74,7 +79,7 @@ public class PlayerController : MonoBehaviour	{
     void Test() {
     }
 
-    void InputActions()  {
+    void CheckInputActions()  {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)) {
             if (dialogueManager.IsActiveDialog()) {
                 dialogueManager.NextInDialog();

@@ -8,14 +8,15 @@ public class DialogInteractable : Interactable	{
     private AudioSource audioSource;
     private VIDE_Assign dialog;
 
-    public override void Interact() {
-        base.Interact();
+    public override bool Interact() {
         if (dialog == null || audioSource == null)  {
             Debug.LogWarning("Cannot start dialog");
-            return;
+            return false;
         }
         
         DialogManager.instance.StartDialog(dialog, audioSource);
+        base.WasInteracted();
+        return true;
     }
 
     void Start() {

@@ -4,9 +4,8 @@ public class ItemPickup : Interactable	{
 
     public Item item;
 
-    public override void Interact() {
-        base.Interact();
-        PickUpItem();
+    public override bool Interact() {
+        return PickUpItem();
     }
 
     private void Awake() {
@@ -15,13 +14,16 @@ public class ItemPickup : Interactable	{
         }
     }
 
-    void PickUpItem() {
+    bool PickUpItem() {
         Debug.Log("picking up item called: " + item.name);
 
         bool wasPickedUp = Inventory.instance.AddToInventory(item);
 
         if (wasPickedUp) {
+            base.WasInteracted();
             Destroy(gameObject);
+            return true;
         }
+        return false;
     }
 }

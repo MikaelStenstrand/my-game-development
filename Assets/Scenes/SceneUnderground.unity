@@ -369,8 +369,101 @@ PrefabInstance:
       propertyPath: Mouth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[0]
+      value: 
+      objectReference: {fileID: 33044162}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[1]
+      value: 
+      objectReference: {fileID: 33044161}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[2]
+      value: 
+      objectReference: {fileID: 33044160}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[3]
+      value: 
+      objectReference: {fileID: 33044159}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[4]
+      value: 
+      objectReference: {fileID: 33044158}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[5]
+      value: 
+      objectReference: {fileID: 33044157}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[6]
+      value: 
+      objectReference: {fileID: 33044156}
+    - target: {fileID: 114647277514057144, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+        type: 3}
+      propertyPath: mouths.Array.data[7]
+      value: 
+      objectReference: {fileID: 33044155}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c972239f8d58d944a0e1cff0da4ac22, type: 3}
+--- !u!1 &33044155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100116, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100088, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100098, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100080, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100072, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100050, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100108, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33044162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100118, guid: 2c972239f8d58d944a0e1cff0da4ac22,
+    type: 3}
+  m_PrefabInstance: {fileID: 33044154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &51468708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3650452189653992327, guid: ac8510145446dad44a3978cb8c0391b0,
@@ -16982,7 +17075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1948112407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17644,7 +17737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Press E to pickup -'
+  m_Text: '- Press E -'
 --- !u!222 &2024793230
 CanvasRenderer:
   m_ObjectHideFlags: 0
