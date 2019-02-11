@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d75eceaee46a016479e3bf59d45d5fa6, type: 3}
-  m_Name: Item1
+  m_Name: Book_Item
   m_EditorClassIdentifier: 
-  name: Item1
-  icon: {fileID: 21300000, guid: 9e5eefef3b3fdff40a66f9c9db42ac9e, type: 3}
+  name: The Bible
+  icon: {fileID: 21300000, guid: 12795a29ac86343dcbe17b357a7787c3, type: 3}
