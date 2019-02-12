@@ -19,6 +19,7 @@ public class EquipmentManager : MonoBehaviour	{
 
     #endregion
 
+    public GameObject attachPoint;
     Equipment[] currentEquipment;
 
     Inventory inventory;
@@ -52,6 +53,10 @@ public class EquipmentManager : MonoBehaviour	{
         currentEquipment[slotIndex] = newEquipment;
         inventory.RemoveFromInventory(newEquipment);
 
+        if (newEquipment.itemPrefab) {
+            AttachEquipmentToPlayer(newEquipment.itemPrefab, slotIndex);
+        }
+
         if (onEquipmentChangedCallback != null)
             onEquipmentChangedCallback.Invoke(newEquipment, oldEquipment);
     }
@@ -77,7 +82,14 @@ public class EquipmentManager : MonoBehaviour	{
         }
     }
 
-
+    void AttachEquipmentToPlayer(GameObject itemPrefab, int slotIndex) {
+        GameObject equipmentGO = Instantiate(itemPrefab);
+        Transform equipmentTransform = equipmentGO.transform;
+        equipmentTransform.parent = attachPoint.transform;
+        equipmentTransform.localPosition = Vector3.zero;
+        equipmentTransform.localEulerAngles = Vector3.zero;
+        equipmentTransform.localScale = new Vector3(1, 1, 1);
+    }
 
 
 
