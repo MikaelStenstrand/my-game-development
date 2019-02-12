@@ -7,9 +7,7 @@ public class Item : ScriptableObject {
     public Sprite icon = null;
 
 
-    public virtual void UseItem() {
-        Debug.Log("using item: " + name);
-    }
+    public virtual void UseItem() { }
 
 
 }

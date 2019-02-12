@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d75eceaee46a016479e3bf59d45d5fa6, type: 3}
-  m_Name: Book_Item
+  m_Script: {fileID: 11500000, guid: 4e3c98b4d3fb6654fbf4c63ab435018e, type: 3}
+  m_Name: Book_Equipment
   m_EditorClassIdentifier: 
   name: The Bible
   icon: {fileID: 21300000, guid: 12795a29ac86343dcbe17b357a7787c3, type: 3}
+  equipmentSlot: 1

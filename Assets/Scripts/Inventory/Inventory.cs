@@ -25,6 +25,10 @@ public class Inventory : MonoBehaviour	{
     public OnInventoryChanged onInventoryChangedCallback;
 
     public bool AddToInventory(Item item) {
+        if (items.Exists(current => current.name == item.name)) {
+            Debug.Log("Duplicate items exists in inventory: " + item.name);
+            return false;
+        }
         if (inventorySpace <= items.Count) {
             Debug.Log("no more space in inventory");
             return false;

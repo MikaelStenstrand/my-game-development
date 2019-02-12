@@ -3925,6 +3925,7 @@ GameObject:
   - component: {fileID: 827784754}
   - component: {fileID: 827784756}
   - component: {fileID: 827784757}
+  - component: {fileID: 827784758}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3957,14 +3958,14 @@ MonoBehaviour:
     volume: 0.3
     pitch: 1
     loop: 1
-    playOnStart: 1
+    playOnStart: 0
     source: {fileID: 0}
   - name: AbstractBackgroundMusic
     audioClip: {fileID: 8300000, guid: 92908e6991aac714bb929e4e22b822e9, type: 3}
     volume: 0.1
     pitch: 1
     loop: 1
-    playOnStart: 1
+    playOnStart: 0
     source: {fileID: 0}
 --- !u!4 &827784755
 Transform:
@@ -4010,6 +4011,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySpace: 10
   items: []
+--- !u!114 &827784758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827784753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cd9f38e62589349937ea5b5a0e35ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &853716445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6390,7 +6403,7 @@ PrefabInstance:
         type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: ef9c8e6c189be44f4a3ad282b8782b33,
+      objectReference: {fileID: 11400000, guid: bba9248883a85364785df1f3d5fa37a7,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c97af46b0f80aec4aba0eb30e156bae3, type: 3}
@@ -18559,7 +18572,7 @@ MonoBehaviour:
   interactionPoint: {fileID: 6003857528696913104}
   timesOfInteraction: 1
   isActive: 1
-  item: {fileID: 11400000, guid: 4957eb93ec86b49a1af3bdde0122ffe6, type: 2}
+  item: {fileID: 11400000, guid: ecd12283ae3d9b94dbf7edd93ce3afa0, type: 2}
 --- !u!33 &2271009899382032922
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18648,7 +18661,7 @@ GameObject:
   - component: {fileID: 2271009899382032996}
   - component: {fileID: 5750377455644766825}
   m_Layer: 0
-  m_Name: FlashLight_Interactable
+  m_Name: FlashLight_Equipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18758,7 +18771,7 @@ GameObject:
   - component: {fileID: 2271009900525949026}
   - component: {fileID: 5750377455578753135}
   m_Layer: 0
-  m_Name: Book_Interactable
+  m_Name: Book_Equipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19023,7 +19036,7 @@ MonoBehaviour:
   interactionPoint: {fileID: 2271009899813426577}
   timesOfInteraction: 1
   isActive: 1
-  item: {fileID: 11400000, guid: 8965d7578f155c342a2a29c5c883cc90, type: 2}
+  item: {fileID: 11400000, guid: e73e06bdfa3fb904aaeb340b47f518bb, type: 2}
 --- !u!114 &5750377455644766825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19040,7 +19053,7 @@ MonoBehaviour:
   interactionPoint: {fileID: 2271009900152164247}
   timesOfInteraction: 1
   isActive: 1
-  item: {fileID: 11400000, guid: c7d9cd049242cc247b4672d5a25a7af0, type: 2}
+  item: {fileID: 11400000, guid: c3a7c1ee4f3ddcb45a8d4223708dd6a1, type: 2}
 --- !u!1 &6003857527453808929
 GameObject:
   m_ObjectHideFlags: 0
@@ -19055,7 +19068,7 @@ GameObject:
   - component: {fileID: 6003857527453808931}
   - component: {fileID: 223124102324502830}
   m_Layer: 0
-  m_Name: Knife_Interactable
+  m_Name: Knife_Equipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
