@@ -23,6 +23,9 @@ public class EquipmentManager : MonoBehaviour	{
 
     Inventory inventory;
 
+    public delegate void OnEquipmentChanged(Equipment newEquipment, Equipment oldEquipment);
+    public OnEquipmentChanged onEquipmentChangedCallback;
+
     private void Start() {
         int numberOfEquipmentSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numberOfEquipmentSlots];
@@ -46,9 +49,11 @@ public class EquipmentManager : MonoBehaviour	{
                 inventory.AddToInventory(oldEquipment);
             }
         }
-
         currentEquipment[slotIndex] = newEquipment;
         inventory.RemoveFromInventory(newEquipment);
+
+        if (onEquipmentChangedCallback != null)
+            onEquipmentChangedCallback.Invoke(newEquipment, oldEquipment);
     }
 
     public void Unequip(Equipment equipment) {
@@ -59,6 +64,9 @@ public class EquipmentManager : MonoBehaviour	{
                 inventory.AddToInventory(oldEquipment);
 
                 currentEquipment[slotIndex] = null;
+
+                if (onEquipmentChangedCallback != null)
+                    onEquipmentChangedCallback.Invoke(null, oldEquipment);
             }
         }
     }
