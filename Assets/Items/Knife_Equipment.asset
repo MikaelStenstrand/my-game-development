@@ -17,3 +17,6 @@ MonoBehaviour:
   itemPrefab: {fileID: 1953564423218021743, guid: 7568f238cb8da774c9f8a1da9a86c357,
     type: 3}
   equipmentSlot: 0
+  playerAttachmentPositionModifier: {x: 0.068, y: 0.111, z: 0.259}
+  playerAttachmentRotationModifier: {x: 120.267, y: -206.359, z: -230.956}
+  playerAttachmentScaleModifier: {x: 3, y: 3, z: 3}

@@ -6,6 +6,9 @@ using UnityEngine;
 public class Equipment : Item	{
 
     public EquipmentSlot equipmentSlot;
+    public Vector3 playerAttachmentPositionModifier;
+    public Vector3 playerAttachmentRotationModifier;
+    public Vector3 playerAttachmentScaleModifier;
 
     // equipment modifiers can be added here
 
@@ -19,4 +22,4 @@ public class Equipment : Item	{
 }
 
 
-public enum EquipmentSlot { RightHand, LeftHand, Head, Chest, Legs, Feet}
+public enum EquipmentSlot { RightHand, LeftHand }

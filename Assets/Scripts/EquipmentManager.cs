@@ -19,7 +19,11 @@ public class EquipmentManager : MonoBehaviour	{
 
     #endregion
 
-    public GameObject attachPoint;
+
+    // 0: RightHand, 1: LeftHand
+    public GameObject[] equipmentAttachmentPoints;
+
+    GameObject[] currentEquipmentGOOnPlayer;
     Equipment[] currentEquipment;
 
     Inventory inventory;
@@ -30,6 +34,7 @@ public class EquipmentManager : MonoBehaviour	{
     private void Start() {
         int numberOfEquipmentSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numberOfEquipmentSlots];
+        currentEquipmentGOOnPlayer = new GameObject[numberOfEquipmentSlots];
         inventory = Inventory.instance;
     }
 
@@ -50,11 +55,15 @@ public class EquipmentManager : MonoBehaviour	{
                 inventory.AddToInventory(oldEquipment);
             }
         }
+        if (currentEquipmentGOOnPlayer[slotIndex] != null) {
+            UnequipGOFromPlayer(slotIndex);
+        }
+
         currentEquipment[slotIndex] = newEquipment;
         inventory.RemoveFromInventory(newEquipment);
 
-        if (newEquipment.itemPrefab) {
-            AttachEquipmentToPlayer(newEquipment.itemPrefab, slotIndex);
+        if (newEquipment.itemPrefab != null) {
+            EquipGOToPlayer(newEquipment, slotIndex);
         }
 
         if (onEquipmentChangedCallback != null)
@@ -70,6 +79,10 @@ public class EquipmentManager : MonoBehaviour	{
 
                 currentEquipment[slotIndex] = null;
 
+                if (currentEquipmentGOOnPlayer[slotIndex] != null) {
+                    UnequipGOFromPlayer(slotIndex);
+                }
+
                 if (onEquipmentChangedCallback != null)
                     onEquipmentChangedCallback.Invoke(null, oldEquipment);
             }
@@ -77,21 +90,26 @@ public class EquipmentManager : MonoBehaviour	{
     }
 
     public void UnequipAll() {
-        for (int i = 0; i < currentEquipment.Length - 1; i++) {
+        for (int i = 0; i < currentEquipment.Length; i++) {
             Unequip(currentEquipment[i]);
         }
     }
 
-    void AttachEquipmentToPlayer(GameObject itemPrefab, int slotIndex) {
-        GameObject equipmentGO = Instantiate(itemPrefab);
+    void EquipGOToPlayer(Equipment equipment, int slotIndex) {
+        GameObject equipmentGO = Instantiate(equipment.itemPrefab);
         Transform equipmentTransform = equipmentGO.transform;
-        equipmentTransform.parent = attachPoint.transform;
-        equipmentTransform.localPosition = Vector3.zero;
-        equipmentTransform.localEulerAngles = Vector3.zero;
-        equipmentTransform.localScale = new Vector3(1, 1, 1);
+        equipmentTransform.parent = equipmentAttachmentPoints[slotIndex].transform;
+        equipmentTransform.localPosition = equipment.playerAttachmentPositionModifier;
+        equipmentTransform.localEulerAngles = equipment.playerAttachmentRotationModifier;
+        equipmentTransform.localScale = equipment.playerAttachmentScaleModifier;
+        currentEquipmentGOOnPlayer[slotIndex] = equipmentGO;
     }
 
-
+    void UnequipGOFromPlayer(int slotIndex) {
+        Destroy(currentEquipmentGOOnPlayer[slotIndex]);
+        currentEquipmentGOOnPlayer[slotIndex] = null;
+    }
+    
 
 
 
