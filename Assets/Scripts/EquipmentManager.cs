@@ -95,6 +95,14 @@ public class EquipmentManager : MonoBehaviour	{
         }
     }
 
+    public bool isEquiped(Equipment equipment) {
+        int slotIndex = (int) equipment.equipmentSlot;
+        if (currentEquipment[slotIndex] != null && currentEquipment[slotIndex] == equipment) {
+           return true;
+        }
+        return false;
+    }
+
     void EquipGOToPlayer(Equipment equipment, int slotIndex) {
         GameObject equipmentGO = Instantiate(equipment.itemPrefab);
         Transform equipmentTransform = equipmentGO.transform;
