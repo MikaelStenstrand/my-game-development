@@ -19425,6 +19425,12 @@ PrefabInstance:
       propertyPath: transitionSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6339100226632622092, guid: d3f6f12531eb4c141a7ceab85ca6885e,
+        type: 3}
+      propertyPath: interactingEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b4b5f87e2c1bf8047aa90fddb6031254,
+        type: 2}
     - target: {fileID: 6339100226251720763, guid: d3f6f12531eb4c141a7ceab85ca6885e,
         type: 3}
       propertyPath: m_LocalScale.x
