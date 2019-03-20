@@ -21,8 +21,6 @@ public class TransformAction : ActionLogic	{
     [SerializeField]
     Vector3 newScale;
 
-    [SerializeField] GameEvent switchFlashlightStateEvent;
-
     public override void DoAction() {
         Debug.Log("Do Transform action");
 
@@ -30,9 +28,6 @@ public class TransformAction : ActionLogic	{
         Vector3 rotationChange = (relatedChanges) ? targetTransform.localEulerAngles + newRotation : newRotation;
         Vector3 scaleChange = (relatedChanges) ? targetTransform.localScale + newScale : newScale;
         StartCoroutine(SmoothTransform(targetTransform, positionChange, rotationChange, scaleChange, 1 / transitionSpeed));
-
-        // Testing events
-        switchFlashlightStateEvent.Raise();
     }
 
     public override void FailedToDoAction() {

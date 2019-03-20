@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7d8e56affdda44b82a4f5ca4d411dd, type: 3}
-  m_Name: FlashLigt_SwitchLightState
+  m_Name: UseEquippedTool
   m_EditorClassIdentifier: 

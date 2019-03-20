@@ -3,9 +3,17 @@
 public class FlashLightAction : MonoBehaviour {
 
     [SerializeField] private GameObject flashLight;
+    private EquipmentManager equipmentManager;
+
+    private void Start() {
+        equipmentManager = EquipmentManager.instance;
+    }
+
 
     public void SwitchLightState() {
-        bool state = flashLight.activeSelf;
-        flashLight.SetActive(!state);
+        if (equipmentManager.isEquiped(gameObject)) {
+            bool state = flashLight.activeSelf;
+            flashLight.SetActive(!state);
+        }
     }
 }

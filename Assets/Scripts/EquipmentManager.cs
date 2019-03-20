@@ -103,6 +103,15 @@ public class EquipmentManager : MonoBehaviour	{
         return false;
     }
 
+    public bool isEquiped(GameObject equipmentGO) {
+        for (int i = 0; i < currentEquipmentGOOnPlayer.Length; i++) {
+            if (equipmentGO == currentEquipmentGOOnPlayer[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     void EquipGOToPlayer(Equipment equipment, int slotIndex) {
         GameObject equipmentGO = Instantiate(equipment.itemPrefab);
         Transform equipmentTransform = equipmentGO.transform;

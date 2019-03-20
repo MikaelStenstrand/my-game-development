@@ -18165,6 +18165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 219092813}
   dialogueManager: {fileID: 486351857}
+  useEquippedToolEvent: {fileID: 11400000, guid: b4b5f87e2c1bf8047aa90fddb6031254,
+    type: 2}
 --- !u!4 &2014865463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: 2c972239f8d58d944a0e1cff0da4ac22,
@@ -19428,6 +19430,12 @@ PrefabInstance:
     - target: {fileID: 6339100226632622092, guid: d3f6f12531eb4c141a7ceab85ca6885e,
         type: 3}
       propertyPath: interactingEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b4b5f87e2c1bf8047aa90fddb6031254,
+        type: 2}
+    - target: {fileID: 6339100226632622092, guid: d3f6f12531eb4c141a7ceab85ca6885e,
+        type: 3}
+      propertyPath: switchFlashlightStateEvent
       value: 
       objectReference: {fileID: 11400000, guid: b4b5f87e2c1bf8047aa90fddb6031254,
         type: 2}

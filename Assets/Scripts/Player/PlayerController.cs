@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour	{
     public HUD hud;
     public DialogManager dialogueManager;
     Interactable currentInteractableFocus;
+    public GameEvent useEquippedToolEvent;
 
     void Update() {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -76,9 +77,6 @@ public class PlayerController : MonoBehaviour	{
         // TODO: character to look at the focus object
     }
 
-    void Test() {
-    }
-
     void CheckInputActions()  {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)) {
             if (dialogueManager.IsActiveDialog()) {
@@ -88,8 +86,8 @@ public class PlayerController : MonoBehaviour	{
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.T))  {
-            Test();
+        if (Input.GetKeyDown(KeyCode.F))  {
+            useEquippedToolEvent.Raise();
         }
     }
 
