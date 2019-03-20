@@ -176,7 +176,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d109644c8d7fc81419d29774a9216960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashLight: {fileID: 1011056427}
+  flashlight: {fileID: 1011056427}
+  soundEffect:
+    name: Flashlight sound
+    audioClip: {fileID: 8300000, guid: 4fc05ca17f99fd44582383b84caee6d6, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    playOnStart: 0
+    source: {fileID: 0}
 --- !u!114 &466943017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +203,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 466943016}
         m_MethodName: SwitchLightState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 466943016}
+        m_MethodName: PlaySwitchLightSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
