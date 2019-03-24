@@ -3,8 +3,6 @@
 public class FlashLightAction : MonoBehaviour {
 
     [SerializeField] private GameObject flashlight;
-    [SerializeField] private Sound soundEffect;
-    [SerializeField] private float soundVolume = 0.2f;
 
     private EquipmentManager equipmentManager;
     private AudioSource audioSource;
@@ -12,7 +10,6 @@ public class FlashLightAction : MonoBehaviour {
 
     private void Start() {
         equipmentManager = EquipmentManager.instance;
-        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
 
@@ -20,11 +17,6 @@ public class FlashLightAction : MonoBehaviour {
         if (equipmentManager.isEquiped(gameObject)) {
             bool state = flashlight.activeSelf;
             flashlight.SetActive(!state);
-            this.PlaySwitchLightSound();
         }
-    }
-
-    private void PlaySwitchLightSound() {
-        audioSource.PlayOneShot(soundEffect.audioClip, soundVolume);
     }
 }

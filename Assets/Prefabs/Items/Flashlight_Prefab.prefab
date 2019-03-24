@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 2028180507}
   - component: {fileID: 466943016}
   - component: {fileID: 466943017}
+  - component: {fileID: 1293715619}
   m_Layer: 0
   m_Name: Flashlight_Prefab
   m_TagString: Untagged
@@ -177,15 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 1011056427}
-  soundEffect:
-    name: Flashlight sound
-    audioClip: {fileID: 8300000, guid: 4fc05ca17f99fd44582383b84caee6d6, type: 3}
-    volume: 1
-    pitch: 0
-    loop: 0
-    playOnStart: 0
-    source: {fileID: 0}
-  soundVolume: 0.3
 --- !u!114 &466943017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,5 +205,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1293715619}
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1293715619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028180505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56250d9947dd644a9377b9a7dbfaa38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    name: 
+    audioClip: {fileID: 8300000, guid: 4fc05ca17f99fd44582383b84caee6d6, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    playOnStart: 0
+    source: {fileID: 0}
+  soundVolume: 0.2
