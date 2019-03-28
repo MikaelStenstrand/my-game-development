@@ -1,13 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour	{
 
     public HUD hud;
     public DialogManager dialogueManager;
-    Interactable currentInteractableFocus;
     public GameEvent useEquippedToolEvent;
+    [SerializeField] float activeHeadLookControlEffect = 1;
+    [SerializeField] float headLookTransitionFade = 0.01f;
+
+    HeadLookController headLookCtrl;
+    Interactable currentInteractableFocus;
+
+    private void Start() {
+        headLookCtrl = gameObject.GetComponent<HeadLookController>();
+    }
 
     void Update() {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -16,20 +25,23 @@ public class PlayerController : MonoBehaviour	{
         CheckInputActions();
 
         if(currentInteractableFocus != null && currentInteractableFocus.isActive)   {
-            FollowFocusObject();
+            LookAtPosition(currentInteractableFocus.transform.position);
 
             if (currentInteractableFocus.IsInteractable(gameObject.transform)) {
                 hud.OpenMessagePanel("");
             }   else    {
                 hud.CloseMessagePanel();
             }
+        } else {
+            StopLookAtPosition();
         }
-
     }
 
     void OnTriggerEnter(Collider other) {
         Interactable interactable = other.GetComponent<Interactable>();
-        SetFocus(interactable);
+        if (interactable != null) {
+            SetFocus(interactable);
+        }
     }
 
     void OnTriggerExit(Collider other) {
@@ -59,6 +71,7 @@ public class PlayerController : MonoBehaviour	{
                 if (currentInteractableFocus != null)
                     RemoveFocus(currentInteractableFocus);
 
+                LookAtPosition(newFocus.transform.position);
                 currentInteractableFocus = newFocus;
                 // call functions on Interactable if needed
             }
@@ -70,11 +83,37 @@ public class PlayerController : MonoBehaviour	{
         if (currentInteractableFocus == null || interactableToBeRemoved != currentInteractableFocus) {
             return;
         }
+        StopLookAtPosition();
         currentInteractableFocus = null;
         hud.CloseMessagePanel();
     }
-    void FollowFocusObject()  {
-        // TODO: character to look at the focus object
+
+    void LookAtPosition(Vector3 targetPosition)  {
+        headLookCtrl.target = targetPosition;
+        if (currentInteractableFocus == null) {
+            StartCoroutine("SmoothStartHeadMovement");
+        }
+    }
+
+    void StopLookAtPosition() {
+        headLookCtrl.target = Vector3.zero;
+        if (currentInteractableFocus != null) {
+            StartCoroutine("SmoothStopHeadMovement");
+        }
+    }
+
+    IEnumerator SmoothStopHeadMovement() {
+        for (float i = activeHeadLookControlEffect; i >= 0; i -= headLookTransitionFade) {
+            headLookCtrl.effect = i;
+            yield return null;
+        }
+    }
+
+    IEnumerator SmoothStartHeadMovement() {
+        for (float i = 0; i <= activeHeadLookControlEffect; i += headLookTransitionFade) {
+            headLookCtrl.effect = i;
+            yield return null;
+        }
     }
 
     void CheckInputActions()  {
