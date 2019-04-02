@@ -12,6 +12,7 @@ public class DialogManager : MonoBehaviour  {
     public GameObject containerPlayer;
     public Text textNPC;
     public Text[] textChoises;
+    public Image spriteImage;
 
     private AudioSource audioSource;
     private VIDE_Assign dialog;
@@ -65,9 +66,9 @@ public class DialogManager : MonoBehaviour  {
     void UpdateUI(VD.NodeData data) {
         containerNPC.SetActive(false);
         containerPlayer.SetActive(false);
+        spriteImage.enabled = false;
 
         if (data.isPlayer)  {
-            containerPlayer.SetActive(true);
             for (int i = 0; i < textChoises.Length; i++)    {
                 if (i < data.comments.Length)   {
                     textChoises[i].transform.parent.gameObject.SetActive(true);
@@ -76,15 +77,43 @@ public class DialogManager : MonoBehaviour  {
                     textChoises[i].transform.parent.gameObject.SetActive(false);
                 }
             }
+            containerPlayer.SetActive(true);
+            PlaySound(data);
+            ShowPlayerSprite(data);
             textChoises[0].transform.parent.GetComponent<Button>().Select();
         } else  {
             containerNPC.SetActive(true);
             textNPC.text = data.comments[data.commentIndex];
-            if (data.audios[data.commentIndex] != null) {
-                if (audioSource != null)    {
-                    audioSource.clip = data.audios[data.commentIndex];
-                    audioSource.Play();
-                }
+            PlaySound(data);
+            ShowNPCSprite(data);
+        }
+    }
+
+    void ShowPlayerSprite(VD.NodeData data) {
+        if (data.sprite != null) {
+            spriteImage.sprite = data.sprite;
+            spriteImage.enabled = true;
+        } else if (VD.assigned.defaultPlayerSprite != null) {
+            spriteImage.sprite = VD.assigned.defaultPlayerSprite;
+            spriteImage.enabled = true;
+        }
+    }
+
+    void ShowNPCSprite(VD.NodeData data) {
+        if (data.sprite != null) {
+            spriteImage.sprite = data.sprite;
+            spriteImage.enabled = true;
+        } else if (VD.assigned.defaultNPCSprite != null) {
+            spriteImage.sprite = VD.assigned.defaultNPCSprite;
+            spriteImage.enabled = true;
+        }
+    }
+
+    void PlaySound(VD.NodeData data) {
+        if (data.audios[data.commentIndex] != null) {
+            if (audioSource != null) {
+                audioSource.clip = data.audios[data.commentIndex];
+                audioSource.Play();
             }
         }
     }

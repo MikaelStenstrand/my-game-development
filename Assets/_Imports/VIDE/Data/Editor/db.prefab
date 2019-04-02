@@ -43,22 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 12
+  fileIndex: 14
   skinIndex: 0
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 35549
+  currentID: 56294
   autosave: 1
   previewPanning: 0
-  currentDiag: 12
+  currentDiag: 14
   locEdit: 0
   pNodeID: 18
   aNodeID: 2
   S_playerDiags:
-  - commentCount: 4
+  - commentCount: 1
     s_comment:
-    - text: Hmm.. A door!
+    - text: Where am I?
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 1
@@ -71,74 +71,29 @@ MonoBehaviour:
         width: 30
         height: 21
       sprites: {fileID: 0}
-      audios: {fileID: 8300000, guid: 60b5ea3288a7398468b736fe72233c52, type: 3}
-      visible: 1
-    - text: This must have been my way in here...
-      extraData: ExtraData
-      inputSetIndex: 0
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 1
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 8300000, guid: 385d0bed7c4b12a4c9763d9245bfed47, type: 3}
-      visible: 1
-    - text: I'm I so drunk that I don't rememeber how I got here?
-      extraData: ExtraData
-      inputSetIndex: 0
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 1
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: What can i do for you?
-      extraData: ExtraData
-      inputSetIndex: 0
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
+      audios: {fileID: 8300000, guid: 9063d985e1a2c2547ae194a12757ee79, type: 3}
       visible: 1
     ID: 0
     rect:
       serializedVersion: 2
-      x: 140
-      y: 110
+      x: 170
+      y: 60
       width: 349
-      height: 378
+      height: 148
     pTag: 
-    expand: 1
-    sprite: {fileID: 21300000, guid: 8b547fe9d26af744cb624a90abcbc953, type: 3}
+    expand: 0
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 3
+  - commentCount: 1
     s_comment:
-    - text: I'm looking for adventure
+    - text: "What is this place\r?"
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 2
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
@@ -146,59 +101,29 @@ MonoBehaviour:
         width: 30
         height: 21
       sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Dragons? Really?
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 3
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 81
-        width: 30
-        height: 21
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Back off, You filthy beast!
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 4
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 103
-        width: 30
-        height: 21
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
+      audios: {fileID: 8300000, guid: 1e9f5d6dafa84dc44a06daf93d8d69e2, type: 3}
       visible: 1
     ID: 1
     rect:
       serializedVersion: 2
-      x: 550
-      y: 110
+      x: 560
+      y: 60
       width: 349
-      height: 259
+      height: 148
     pTag: 
-    expand: 1
-    sprite: {fileID: 21300000, guid: b125c913cebe86249bbefc6732d811db, type: 3}
+    expand: 0
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
-    isPlayer: 1
-  - commentCount: 3
+    isPlayer: 0
+  - commentCount: 1
     s_comment:
-    - text: Adventure, huh?
+    - text: How did I get here?
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: -1
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 0
@@ -206,135 +131,15 @@ MonoBehaviour:
         width: 0
         height: 0
       sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: You'll find tons of that here
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: We need warriors like you to take on the challenge
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
+      audios: {fileID: 8300000, guid: e3216be414e36fa4da9aa3097c196918, type: 3}
       visible: 1
     ID: 2
     rect:
       serializedVersion: 2
-      x: 990
-      y: 50
+      x: 920
+      y: 60
       width: 349
-      height: 173
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: Have you not ever seen a dragon before?
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Yes! Plenty of them!
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    rect:
-      serializedVersion: 2
-      x: 1040
-      y: 240
-      width: 349
-      height: 151
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: No need for that, human.
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: We are no threat to you.
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 4
-    rect:
-      serializedVersion: 2
-      x: 1080
-      y: 410
-      width: 349
-      height: 143
+      height: 148
     pTag: 
     expand: 0
     sprite: {fileID: 0}

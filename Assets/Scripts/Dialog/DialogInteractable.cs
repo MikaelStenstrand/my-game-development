@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class DialogInteractable : Interactable	{
-    
+
+    [SerializeField] bool autoStart = false;
     private AudioSource audioSource;
     private VIDE_Assign dialog;
 
@@ -22,5 +23,9 @@ public class DialogInteractable : Interactable	{
     void Start() {
         audioSource = GetComponent<AudioSource>();
         dialog = GetComponent<VIDE_Assign>();
+
+        if (autoStart) {
+            Invoke("Interact", 2);
+        }
     }
 }
