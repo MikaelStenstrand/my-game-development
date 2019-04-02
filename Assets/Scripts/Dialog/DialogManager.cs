@@ -122,6 +122,7 @@ public class DialogManager : MonoBehaviour  {
         playerAnimation.EnableMovement();
         containerNPC.SetActive(false);
         containerPlayer.SetActive(false);
+        spriteImage.enabled = false;
 
         VD.OnNodeChange -= UpdateUI;
         VD.OnEnd -= EndDialogue;

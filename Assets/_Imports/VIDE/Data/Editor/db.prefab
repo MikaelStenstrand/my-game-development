@@ -79,13 +79,13 @@ MonoBehaviour:
       x: 170
       y: 60
       width: 349
-      height: 148
+      height: 242
     pTag: 
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
     vars: []
     varKeys: []
-    isPlayer: 0
+    isPlayer: 1
   - commentCount: 1
     s_comment:
     - text: "What is this place\r?"
@@ -106,16 +106,16 @@ MonoBehaviour:
     ID: 1
     rect:
       serializedVersion: 2
-      x: 560
+      x: 540
       y: 60
       width: 349
-      height: 148
+      height: 242
     pTag: 
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
     vars: []
     varKeys: []
-    isPlayer: 0
+    isPlayer: 1
   - commentCount: 1
     s_comment:
     - text: How did I get here?
@@ -126,18 +126,228 @@ MonoBehaviour:
       showmore: 1
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 59
+        width: 30
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 8300000, guid: e3216be414e36fa4da9aa3097c196918, type: 3}
       visible: 1
     ID: 2
     rect:
       serializedVersion: 2
-      x: 920
+      x: 910
       y: 60
+      width: 349
+      height: 242
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: I don't know
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 4
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 288e8678f19dd9442960555766af6df4, type: 3}
+      visible: 1
+    ID: 3
+    rect:
+      serializedVersion: 2
+      x: 1330
+      y: 270
+      width: 349
+      height: 242
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Ah! Who are you?
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 790ca0c822a80814085b1dcf85a3f1b9, type: 3}
+      visible: 1
+    ID: 4
+    rect:
+      serializedVersion: 2
+      x: 1700
+      y: 250
+      width: 349
+      height: 148
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: I am you!
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 6
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 35a220ab121d10e4d98a66859bcb9b67, type: 3}
+      visible: 1
+    ID: 5
+    rect:
+      serializedVersion: 2
+      x: 2080
+      y: 70
+      width: 349
+      height: 148
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: What? How can you be me?
+      extraData: ExtraData
+      inputSetIndex: 6
+      outputNodeIndex: 7
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 52766b1a27d12964d93f6b6bbb55cec9, type: 3}
+      visible: 1
+    ID: 6
+    rect:
+      serializedVersion: 2
+      x: 2450
+      y: 70
+      width: 349
+      height: 148
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: Well, I'm you. The thinking part of you. I'm your head
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: 8
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 63463585c06caf9418a892c673474306, type: 3}
+      visible: 1
+    ID: 7
+    rect:
+      serializedVersion: 2
+      x: 2870
+      y: 60
+      width: 349
+      height: 156
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: How can you be me? I know I am me, and you are you. You cannot be me!?
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: 9
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 8936c0ad2af00e348987d1b53f8dc092, type: 3}
+      visible: 1
+    ID: 8
+    rect:
+      serializedVersion: 2
+      x: 3260
+      y: 70
+      width: 349
+      height: 169
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: Let me show you!
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 8300000, guid: 01d3c765c8011e645a82c77b7dcd10cc, type: 3}
+      visible: 1
+    ID: 9
+    rect:
+      serializedVersion: 2
+      x: 3650
+      y: 70
       width: 349
       height: 148
     pTag: 
