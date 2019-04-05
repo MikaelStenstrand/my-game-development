@@ -129,5 +129,4 @@ public class PlayerController : MonoBehaviour	{
             useEquippedToolEvent.Raise();
         }
     }
-
 }
