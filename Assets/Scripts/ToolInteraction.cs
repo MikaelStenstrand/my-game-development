@@ -18,12 +18,10 @@ public class ToolInteraction : Interactable	{
 
     public override bool Interact() {
         if (CheckEquipmentOnPlayer()) {
-            Debug.Log("Equiped ok! triggering event");
             if (gameEventSuccess != null)
                 gameEventSuccess.Raise();
             return true;
         }
-        Debug.Log("Player has not equiped the required tool");
         if (gameEventFail != null)
             gameEventFail.Raise();
         return false;
