@@ -13,7 +13,6 @@ public class BoolReference	{
             return useConstant ? constantValue : variable.Value;
         }
         set {
-            Debug.Log("setting " + value);
             if (useConstant)
                 constantValue = value;
             else
