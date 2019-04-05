@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(VIDE_Assign))]
 [RequireComponent(typeof(AudioSource))]
 public class SimpleDialogAction : MonoBehaviour	{
 
