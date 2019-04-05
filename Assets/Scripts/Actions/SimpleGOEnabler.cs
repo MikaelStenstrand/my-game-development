@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleEnablerDisabler : MonoBehaviour	{
+public class SimpleGOEnabler : MonoBehaviour	{
 
     [SerializeField] BoolReference isEnabled;
+    [SerializeField] private GameObject gameObjectToEnableDisable = null;
+
     private bool currentState;
-    private GameObject gameObjectToEnableDisable;
 
     private void Start() {
-        gameObjectToEnableDisable = gameObject.transform.GetChild(0).gameObject;
         currentState = gameObjectToEnableDisable.activeSelf;
     }
 
     private void Update() {
-        if (currentState != isEnabled.Value) {
+        if (currentState != isEnabled.Value && gameObjectToEnableDisable != null) {
             gameObjectToEnableDisable.SetActive(isEnabled.Value);
             currentState = isEnabled.Value;
         }
