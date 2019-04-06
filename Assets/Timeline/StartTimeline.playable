@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
   m_Clip: {fileID: 7400000, guid: bc824b1958645e144be6982c709c8958, type: 2}
-  m_Position: {x: 0, y: 0, z: 0}
+  m_Position: {x: 0, y: 0.3, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_EulerAngles: {x: 90, y: 0, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
+  m_RemoveStartOffset: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &114775052230340152
