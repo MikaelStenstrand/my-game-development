@@ -9,8 +9,9 @@ public class FloatVariable : ScriptableObject, ISerializationCallbackReceiver	{
     public float Value;
 
     public void OnAfterDeserialize() {
-        Value = InitialValue;        
+        Value = InitialValue;
     }
 
     public void OnBeforeSerialize() { }
+    
 }
