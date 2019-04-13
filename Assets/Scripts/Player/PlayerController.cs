@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour	{
     public GameEvent useEquippedToolEvent;
     [SerializeField] float activeHeadLookControlEffect = 1;
     [SerializeField] float headLookTransitionFade = 0.01f;
+    [SerializeField] Camera mainCamera;
 
     HeadLookController headLookCtrl;
     Interactable currentInteractableFocus;
@@ -131,19 +132,21 @@ public class PlayerController : MonoBehaviour	{
         if (Input.GetKeyDown(KeyCode.F))  {
             useEquippedToolEvent.Raise();
         }
+
+        if (Input.GetKeyDown(KeyCode.T)) {
+            this.GameStarts();
+        }
+
     }
 
     public void GameStarts() {
-        EnableCharacterController();
+        characterCtrl.enabled = true;
+        CameraManager.instance.ChangeCamera(mainCamera);
         Invoke("fixPosition", 1);
     }
 
     private void fixPosition() {
         transform.position = new Vector3(0.193474f, 0.3687501f, 30.85f);
         transform.rotation = Quaternion.Euler(180, 0, 180);
-    }
-
-    private void EnableCharacterController() {
-        characterCtrl.enabled = true;
     }
 }
