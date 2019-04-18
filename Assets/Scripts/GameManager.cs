@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour	{
     
     #region Singelton
-    public static GameManager instance; 
+    public static GameManager instance;
 
     void Awake() {
         if (instance == null)   {
@@ -19,6 +17,8 @@ public class GameManager : MonoBehaviour	{
 
     public GameObject playerGO;
 
+    [SerializeField] MainMenu mainMenu;
+
     [HideInInspector]
     public PlayerAnimation playerAnimation;
     [HideInInspector]
@@ -31,5 +31,14 @@ public class GameManager : MonoBehaviour	{
         }
         playerAnimation = playerGO.GetComponent<PlayerAnimation>();
         playerController = playerGO.GetComponent<PlayerController>();
+    }
+    private void Update() {
+        CheckInputActions();
+    }
+
+    void CheckInputActions() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            mainMenu.ToggleInGameMenu();
+        }
     }
 }
