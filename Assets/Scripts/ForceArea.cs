@@ -22,11 +22,11 @@ public class ForceArea : MonoBehaviour	{
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (targetedRigidbody == null) {
+    private void OnTriggerStay(Collider other) {
+        if (targetedRigidbody == null)
             targetedRigidbody = other.attachedRigidbody;
+        if (targetedCharacterController == null)
             targetedCharacterController = other.GetComponent<CharacterController>();
-        }
     }
 
     private void OnTriggerExit(Collider other) {
