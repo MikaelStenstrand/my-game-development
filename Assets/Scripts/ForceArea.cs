@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class ForceArea : MonoBehaviour	{
 
-    [SerializeField] BoolReference fanState;
+    [SerializeField] BoolReference isEnabled;
     [SerializeField] float forceEffect = 1;
+
+    [Tooltip("True=forward/backward, false=right/left")]
+    [SerializeField] bool forwardForceDirection = false;
     Rigidbody targetedRigidbody = null;
     CharacterController targetedCharacterController = null;
     Vector3 impact = Vector3.zero;
 
     private void FixedUpdate() {
-        if (fanState.Value) {
+        if (isEnabled.Value) {
             if (targetedRigidbody != null) {
                 AddForce(targetedRigidbody);
             }
@@ -43,7 +46,7 @@ public class ForceArea : MonoBehaviour	{
 
     private void AddForce(CharacterController characterController) {
         if (characterController != null) {
-            Vector3 dir = Vector3.forward;
+            Vector3 dir = forwardForceDirection ? Vector3.forward : Vector3.right;
             dir.Normalize();
             if (dir.y < 0) dir.y = -dir.y;
             impact += dir.normalized * forceEffect;
