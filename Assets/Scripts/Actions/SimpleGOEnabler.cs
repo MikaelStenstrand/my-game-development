@@ -7,6 +7,9 @@ public class SimpleGOEnabler : MonoBehaviour	{
     [SerializeField] BoolReference isEnabled;
     [SerializeField] private GameObject gameObjectToEnableDisable = null;
 
+    [Tooltip("Invert the IsEnabled value")]
+    [SerializeField] bool isInverted = false;
+
     private bool currentState;
 
     private void Start() {
@@ -14,9 +17,10 @@ public class SimpleGOEnabler : MonoBehaviour	{
     }
 
     private void Update() {
-        if (currentState != isEnabled.Value && gameObjectToEnableDisable != null) {
-            gameObjectToEnableDisable.SetActive(isEnabled.Value);
-            currentState = isEnabled.Value;
+        bool stateToSet = isInverted ? !isEnabled.Value : isEnabled.Value;
+        if (currentState != stateToSet && gameObjectToEnableDisable != null) {
+            gameObjectToEnableDisable.SetActive(stateToSet);
+            currentState = stateToSet;
         }
     }
 }

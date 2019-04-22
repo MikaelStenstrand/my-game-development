@@ -5,6 +5,8 @@ using UnityEngine;
 public class ProgressChecker : MonoBehaviour	{
 
     [SerializeField] private BoolReference state;
+
+    [Tooltip("What is the required bool state in order to progress (true or false)")]
     [SerializeField] private bool requiredState;
 
     [SerializeField] private GameEvent successEvent = null;
@@ -25,8 +27,9 @@ public class ProgressChecker : MonoBehaviour	{
                     onlyOnceSuccessTrigger = true;
                 }
             } else {
-                if (failEvent != null)
+                if (failEvent != null) {
                     failEvent.Raise();
+                }
             }
         }
     }
