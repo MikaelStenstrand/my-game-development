@@ -3,7 +3,7 @@ The game is highly influenced of Grim Fandango, in which the player gets to solv
 
 ## Game Builds
 Wanna play the game? Link to the game builds for Mac and Windows:
-https://www.dropbox.com/sh/nj5rjuh0jj108kj/AAC6ZzGxtG1wi-AFPcclgXzMa?dl=0
+https://drive.google.com/drive/folders/1EOBVqkbaESxPdAAstjnHCTW1ObHfMx4c?usp=sharing
 
 
 ## Backlog
